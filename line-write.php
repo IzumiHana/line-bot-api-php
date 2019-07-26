@@ -1,10 +1,12 @@
 <?php
-$request = file_get_contents('php://input');
-$request_array = json_decode($request, true);   // Decode JSON to Array
+//$request = file_get_contents('php://input');
+//$request_array = json_decode($request, true);   // Decode JSON to Array
 
 $my_file = 'output.txt';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 $value = "";
+$value .= $_REQUEST."";
+/*
 if ( sizeof($request_array['param1']) > 0 )
 {
   foreach ($request_array['param1'] as $param1)
@@ -20,6 +22,7 @@ else
 {
   $value = "Not Value";
 }
+*/
  
 fwrite($handle, "value : ".$value);
 
