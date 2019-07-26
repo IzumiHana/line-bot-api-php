@@ -7,6 +7,10 @@ $content = file_get_contents('php://input');
 $arrayJson = json_decode($content, true);
 //รับข้อความจากผู้ใช้
 $message = $arrayJson['events'][0]['message']['text'];
+$my_file = 'output.txt';
+  $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+  $contents = fread($handle, filesize($my_file));
+echo $contents;
 
 function echoMessage($_accessToken,$_channelSecret,$_id,$_message)
    {
