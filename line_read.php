@@ -6,6 +6,7 @@ $channelSecret = "e49746bfa8889c84066470dd0eba81ca";
 $content = file_get_contents('php://input');
 $arrayJson = json_decode($content, true);
 //รับข้อความจากผู้ใช้
+echo "TEST";
 $message = $arrayJson['events'][0]['message']['text'];
 $my_file = 'output.txt';
   $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
