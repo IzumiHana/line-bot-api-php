@@ -13,7 +13,7 @@ if ( sizeof($request_array['param1']) > 0 )
     //$data = 'This is the data';
     //$datetime = new DateTime();
     //$data = $datetime->format('Y-m-d H:i:s');
-    $value = $param1."";
+    $value .= $param1."";
   }
 }
 else
