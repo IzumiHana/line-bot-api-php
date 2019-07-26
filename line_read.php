@@ -8,11 +8,7 @@ $arrayJson = json_decode($content, true);
 //รับข้อความจากผู้ใช้
 echo "TEST";
 $message = $arrayJson['events'][0]['message']['text'];
-$my_file = 'output.txt';
-  $handle = fopen($my_file, 'r') or die('Cannot open file:  '.$my_file);
-  $contents = fread($handle, filesize($my_file));
-echo $contents;
-fclose($handle);
+
 
 function echoMessage($_accessToken,$_channelSecret,$_id,$_message)
    {
@@ -26,7 +22,7 @@ function echoMessage($_accessToken,$_channelSecret,$_id,$_message)
 if($message != "")
 {
   $my_file = 'output.txt';
-  $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+  $handle = fopen($my_file, 'r') or die('Cannot open file:  '.$my_file);
   $contents = fread($handle, filesize($my_file));
 	fclose($handle);
 	echoMessage($accessToken,$channelSecret,$id,$contents); 
